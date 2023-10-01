@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>地址轉換經緯度</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script/addr2coordinates.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png"  class='logo' alt="logo"></img>
+        <h1>批次地址轉換經緯度</h1>
+    </header>
+    <h2><label for="addresses">請輸入要轉換的地址(如範例):</label></h2>
+    <div class="main">
+        <textarea id="addresses" rows="20" cols="80" placeholder="台北市信義區市府路45號"></textarea>
+        <div class="convert-item">
+            <button onclick="addr2Geo()" class="convert-btn">進行轉換</button>
+        </div>
+    </div>
+    <div class="main">
+        <textarea id="addresses" rows="20" cols="80" placeholder="緯度,精度,推測地址"></textarea>
+    </div>
+
+    <!-- <div id="map" style="height: 400px; width: 100%;"></div> -->
+
+    <script>
+    </script>
+</body>
+</html>
