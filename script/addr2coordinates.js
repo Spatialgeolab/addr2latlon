@@ -1,6 +1,7 @@
 const addr2Geo = function (SearchWord = ["台北市信義區市府路45號"]) {
   let textArea = document.getElementById("addresses");
   let resultArea = document.getElementById("result");
+  resultArea.textContent='資料載入中請稍後...'
   SearchWord = textArea.value.split("\n");
   console.log(SearchWord);
   let params = {
