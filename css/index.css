@@ -24,19 +24,21 @@ h2 {
     flex-direction: column;
     width: 100%;
 }
-#addresses {
+#addresses,#result {
     width: 70%;
+    font-size: 20px;
+    
 }
 
 /* Button styling */
-.convert-item{
+.convert-item,.download-item{
     padding: 20px 0;
     height: 50px;
     font-size: 20px;
     font-weight: bold;
 
 }
-.convert-btn{
+.convert-btn,#downloadLink{
 padding: 5px 20px;
 background-color: #007bff;
 color: #fff;

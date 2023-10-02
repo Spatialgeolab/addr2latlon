@@ -2,78 +2,28 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Google Maps Geocoding API Example</title>
+    <title>地址轉換經緯度</title>
     <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <h1>Geocoding Example</h1>
-    <div>
-        <h2><label for="addresses">輸入要轉換的地址:</label></h2>
-        <textarea id="addresses" rows="20" cols="80" placeholder="每個地址一列進行輸入"></textarea>
-        <button onclick="geocodeAddress()">Geocode</button>
+    <header class="header">
+        <img src="logo.png"  class='logo' alt="logo"></img>
+        <h1>批次地址轉換經緯度</h1>
+    </header>
+    <h2><label for="addresses">請輸入要轉換的地址(如範例):</label></h2>
+    <div class="main">
+        <textarea id="addresses" rows="20" cols="80" placeholder="台北市信義區市府路45號"></textarea>
+        <div class="convert-item">
+            <button onclick="addr2Geo()" class="convert-btn" id="convert-btn">進行轉換</button>
+        </div>
+        <textarea id="result" rows="20" cols="80" placeholder="緯度,精度,推測地址"></textarea>
+        <div class="download-item">
+            <a id="downloadLink" style="display: none;">Download CSV</a>
+        </div>
     </div>
-    <div>
-        <!-- <textarea id="output" rows="20" cols="80" placeholder="輸出結果"></textarea> -->
-        <table id="myTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>地址</th>
-                    <th>緯度</th>
-                    <th>經度</th>
-                    <th>精確度</th>
-                    <th>坐標系</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <button onclick="addRow()">添加行</button>
-    </div>
-    <div id="map" style="height: 400px; width: 100%;"></div>
-
-    <script>
-        var map;
-        var geocoder;
-        function initGeocoder() {
-            geocoder = new google.maps.Geocoder();
-        }
-        function geocodeAddress() {
-            var address = document.getElementById('addresses').value.split('\n');
-            var output = document.getElementById('output')
-            // console.log(address.split('\n'))
-            for(let addr of address){
-                console.log(addr)
-                output.value+=`${addr}:${120.000},${24.000}\n`
-            }
-            
-        }
-        function addRow() {
-            // 获取表格元素
-            var address = document.getElementById('addresses').value.split('\n');
-            var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
-            console.log(table)
-            // 创建新行
-            // 创建新单元格
-            address=[['1','2','3','4','5','6'],['1','2','3','4','5','6'],['1','2','3','4','5','6'],['1','2','3','4','5','6']]
-            for (let addr of address ){
-                var newRow = table.insertRow(table.rows.length);
-                for (let i =0 ; i<addr.length;i++){
-                    newRow.insertCell(i).innerHTML=addr[i]}
-            }
-            
-}        
-        //     geocoder.geocode({ 'address': address }, (results, status)=>{
-        //         if (status === 'OK') {
-        //          console.log(status,results,results[0].geometry.location.lat(),results[0].geometry.location.lng())
-        //         } else {
-        //             alert('Geocode was not successful for the following reason: ' + status);
-        //         }
-        //     });
-        // }
-    </script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYUGMAqrLKbgy6K45wou3oxW5Kt7lP00M&callback=initGeocoder">
-    </script>
+    
+    <script src="./script/download.js"></script>
+    <script src="./script/addr2coordinates.js"></script>
 </body>
 </html>
