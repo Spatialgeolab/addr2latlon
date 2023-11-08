@@ -32,7 +32,7 @@
     <!-- <script src="script/addr2coordinates.js"></script> -->
     <script>
         const serverResponseElement = document.getElementById('server-response');
-        fetch('https://106.1.189.145/nominatim/search/')
+        fetch('https://106.1.189.146/nominatim/search/')
           .then(response => {
             if (response.status === 200) {
               serverResponseElement.textContent = '伺服器正常運行';
