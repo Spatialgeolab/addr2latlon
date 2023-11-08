@@ -39,9 +39,9 @@ const addr2Geo = function (SearchWord = ["台北市信義區市府路45號"]) {
     .then((results) => {
       resultArea.textContent = "緯度,經度,返回地址,原始地址\n";
       resultArea.textContent += results.join("");
+      creatDownloadLink(resultArea.textContent);
     })
     .catch((error) => {
       console.error("請求出錯", error);
     });
-  creatDownloadLink(resultArea.textContent);
 };

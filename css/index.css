@@ -48,3 +48,17 @@ transition: background-color 0.3s ease;
 border-radius: 10px;
 font-size: 30px;
 }
+
+.server-status{
+    display: flex;
+    justify-content: center;
+}
+#server-response {
+    font-size: 16px; /* 字體大小 */
+    padding: 10px; /* 內邊距，增加元素的間距 */
+    border: 1px solid #ccc; /* 邊框 */
+    margin-bottom: 10px;
+    border-radius: 5px; /* 圓角邊框 */
+    background-color: #f0f0f0; /* 背景顏色 */
+    color: #333; /* 文字顏色 */
+  }
