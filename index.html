@@ -2,8 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="採用OSM-Nomniatim提供地址批次轉換經緯度">
+    <meta name="keywords" content="地址批次轉換經緯度,地址轉換經緯度,OSM-Nominatim,地理編碼">
+    <meta name="author" content="空間資訊實驗室">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="批次地址轉經緯度-Geolab">
+    <meta property="og:description" content="採用OSM-Nomniatim提供地址批次轉換經緯度">
     <title>地址轉換經緯度</title>
-    <link rel="stylesheet" href="https://www.spatialgeolab.com/wp-content/addr2latlon/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- <link rel="stylesheet" href="css/index.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
@@ -27,9 +33,8 @@
         </div>
     </div>
     
-    <script src="https://www.spatialgeolab.com/wp-content/addr2latlon/script/download.js"></script>
-    <script src="https://www.spatialgeolab.com/wp-content/addr2latlon//script/addr2coordinates.js"></script>
-    <!-- <script src="script/addr2coordinates.js"></script> -->
+    <script src="script/download.js"></script>
+    <script src="script/addr2coordinates.js"></script>
     <script>
         const serverResponseElement = document.getElementById('server-response');
         fetch('https://106.1.189.146/nominatim/search/')
